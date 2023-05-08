@@ -1,5 +1,5 @@
 import React from 'react';
-import {  ChakraProvider, theme } from '@chakra-ui/react';
+import {  ChakraProvider, localStorageManager, extendTheme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -20,9 +20,16 @@ import Chats from './pages/Chats';
 import Profile from './pages/Profile';
 import Footer from './components/Footer/Footer';
 
+const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
+});
+
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} colorModeManager={localStorageManager}>
       <BrowserRouter>
         <Provider store={store}>
           <PersistGate  persistor={persistStore(store)}>
