@@ -80,7 +80,7 @@ export default function NotLoggedNavbar() {
                     fontSize={'xl'}
                     fontWeight={400}
                     variant={'link'}
-                    href={'login'}>
+                    href={'/login'}>
                     Sign In
                 </Button>
                 <Button
@@ -90,7 +90,7 @@ export default function NotLoggedNavbar() {
                     fontWeight={600}
                     color={'white'}
                     bg={'pink.400'}
-                    href={'register'}
+                    href={'/register'}
                     _hover={{
                     bg: 'pink.300',
                     }}>

@@ -4,6 +4,7 @@ const initialState = {
     chatTo: null,
     conversationTo: null,
     auth: false,
+    role: null,
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
