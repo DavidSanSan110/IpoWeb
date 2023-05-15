@@ -104,7 +104,7 @@ const HeroCard = () => {
         <InputGroup size="lg">
           <Input placeholder="Buscar apartamentos" />
         </InputGroup>
-        <Button colorScheme="blue">
+        <Button colorScheme="blue" as={'a'} href={'/apartments'}>
            Buscar
         </Button>
         </HStack>

@@ -20,8 +20,7 @@ import {
 
 const UserProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const userData = {
+  const [userData, setUserData] = useState({
     id: 1,
     name: 'Juan',
     surname: 'García',
@@ -29,11 +28,11 @@ const UserProfile = () => {
     profile_picture: 'https://bit.ly/dan-abramov',
     role: 'Estudiante',
     mobile: '666666666'
-  };
+  });
 
   const handleChange = (e) => {
     //setUserData({ ...userData, [e.target.name]: e.target.value });
-    userData[e.target.name] = e.target.value;
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {

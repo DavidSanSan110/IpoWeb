@@ -13,7 +13,14 @@ import {
   Switch,
   Icon,
   FormHelperText,
-  Image
+  Image,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 
 import { BsFillTrashFill } from 'react-icons/bs';
@@ -34,6 +41,7 @@ function CreateApartmentView() {
   const [rooms, setRooms] = useState([]);
   const [newRoom, setNewRoom] = useState([]);
   const [onlyRooms, setOnlyRooms] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const vibrateAnimation = {
@@ -184,6 +192,7 @@ function CreateApartmentView() {
     });
 
     //Check required fields
+    /*
     if (!apartmentAddress || !apartmentCity || !apartmentZipCode || (!apartmentPrice && !onlyRooms)) {
       alert('Debe llenar los campos requeridos');
       console.log(apartmentAddress, apartmentCity, apartmentZipCode, apartmentPrice, onlyRooms);
@@ -200,7 +209,10 @@ function CreateApartmentView() {
     if (!isValidAddress) {
       alert('La dirección no es válida');
       return;
-    }
+    }*/
+
+    //Open modal
+    setIsOpen(true);
 
     // Lógica para limpiar los campos del formulario
     setApartmentAddress('');
@@ -210,6 +222,10 @@ function CreateApartmentView() {
     setApartmentPicture('');
     setApartmentDescription('');
     setRooms([]);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -431,6 +447,25 @@ function CreateApartmentView() {
             Create Apartment
         </Button>
         </Stack>
+        {/* Modal */}
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Success</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>Apartment Registered Successfully!</ModalBody>
+          <ModalFooter>
+          <Button as={'a'} href={'/apartments'} ml={3} variant="ghost" textDecoration={'underline'} border={'white'}>
+              Apartments
+            </Button>
+            <Button colorScheme="blue" onClick={closeModal} ml={3}>
+              <Text>
+                Close
+              </Text>
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
     </Box>
     );
