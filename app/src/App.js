@@ -13,12 +13,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Apartments from './pages/Apartments';
 import CreateApartment from './pages/CreateApartment';
-import ApartmentExtendedCard from './components/ApartmentCard/ApartmentExtendedCard';
 import Apartment from './pages/Apartment';
 import Chat from './pages/Chat';
 import Chats from './pages/Chats';
 import Profile from './pages/Profile';
 import Footer from './components/Footer/Footer';
+import User from './pages/Users';
 
 const theme = extendTheme({
   config: {
@@ -43,6 +43,7 @@ function App() {
             <Route exact path="/chat" element={<Chat />} />
             <Route exact path="/chats" element={<Chats />} />
             <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/user/:id" element={<User />} />
           </Routes>
           <Footer />
           </PersistGate>

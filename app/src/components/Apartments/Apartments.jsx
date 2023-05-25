@@ -80,7 +80,14 @@ export default function Apartments() {
     const auth = useSelector(state => state.auth);
 
     //Apartments is an array with 100 apartment objects change id to i
-    const apartments = Array.from({length: 100}, (v, i) => ({...apartment, id: i, price: Math.floor(Math.random() * 1000) + 500, fav: Math.random() >= 0.5}))
+    const apartments = Array.from({length: 100}, (v, i) => ({...apartment, 
+      id: i, price: Math.floor(Math.random() * 1000) + 500, 
+      fav: Math.random() >= 0.5,
+      average_rating: Math.floor(Math.random() * 5) + 1,
+      num_ratings: Math.floor(Math.random() * 100) + 1,
+      rooms: Math.floor(Math.random() * 5) + 1,
+      bathrooms: Math.floor(Math.random() * 3) + 1,
+    }))
 
     //Event handlers
     const handlePageChange = (page) => {

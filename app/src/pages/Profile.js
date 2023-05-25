@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbars/Navbar'
-import ProfileCard from '../components/ProfileSettings/ProfileCard';
+import ProfileCard from '../components/ProfileSettings/ProfileSettingsCard'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
